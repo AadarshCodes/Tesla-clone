@@ -24,10 +24,10 @@ const Header = () => {
       <RightMenu>
         <a href='http://tesla.com'>Shop</a>
         <a href='http://tesla.com'>Account</a>
-        <CustomMenu>
+      </RightMenu>
+      <CustomMenu>
           <a onClick={() => setOpen(true)}>Menu</a>
         </CustomMenu>
-      </RightMenu>
       {open && <BurgerNav show={open}>
         <div>
           <img onClick={() => setOpen(!open)} src={Close} />
@@ -81,6 +81,7 @@ left:0;
 right:0;
 .logo{
   padding-left:3.3rem;
+  padding-top:10px;
 }
 .logo:hover{
   background: transparent;
@@ -111,12 +112,26 @@ const RightMenu = styled.div`
     margin:10px;
     padding:5px;
    }
-  
+   @media (max-width:768px){
+    display:none;
+   }
   
 `
 const CustomMenu = styled.div`
 display:flex;
 cursor:pointer;
+a{
+  font-weight:600;
+  text-decoration:uppercase;
+  margin:10px;
+  padding:5px;
+ }
+ @media (max-width:768px){
+  background-color:#fcfcfc4f;
+  border-radius: 15px;
+  margin-right:5px;
+ }
+ 
 `
 
 const BurgerNav = styled.div`

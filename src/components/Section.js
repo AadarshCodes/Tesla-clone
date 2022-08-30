@@ -43,7 +43,6 @@ display:flex;
 flex-direction:column;
 justify-content: space-between;
 background-image: ${props => `url(${props.bgImage})`}
-
 `
 const InnerText = styled.div`
 
