@@ -22,12 +22,13 @@ const Header = () => {
 
       </CenterMenu>
       <RightMenu>
-        <a href='http://tesla.com'>Shop</a>
-        <a href='http://tesla.com'>Account</a>
-      </RightMenu>
-      <CustomMenu>
+        <a href='http://tesla.com' className='rightMen'>Shop</a>
+        <a href='http://tesla.com' className='rightMen'>Account</a>
+        <CustomMenu>
           <a onClick={() => setOpen(true)}>Menu</a>
         </CustomMenu>
+      </RightMenu>
+
       {open && <BurgerNav show={open}>
         <div>
           <img onClick={() => setOpen(!open)} src={Close} />
@@ -113,19 +114,16 @@ const RightMenu = styled.div`
     padding:5px;
    }
    @media (max-width:768px){
-    display:none;
+    .rightMen{
+      display:none;
+    }
    }
-  
+
 `
 const CustomMenu = styled.div`
 display:flex;
 cursor:pointer;
-a{
-  font-weight:600;
-  text-decoration:uppercase;
-  margin:10px;
-  padding:5px;
- }
+
  @media (max-width:768px){
   background-color:#fcfcfc4f;
   border-radius: 15px;
